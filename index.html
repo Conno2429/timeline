@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMAC Timeline</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <section class="mmac-timeline" aria-label="Merced Multicultural Arts Center timeline">
+      <header class="mmac-timeline__header">
+        <h2 class="mmac-timeline__title">Road to 30</h2>
+        <p class="mmac-timeline__subtitle">Key milestones in the Merced Multicultural Arts Center</p>
+      </header>
+      <div class="mmac-timeline__viewport" tabindex="0">
+        <ol class="mmac-timeline__track">
+        </ol>
+      </div>
+      <div class="mmac-popup" style="display:none"></div>
+    </section>
+
+    <script>
+      class Popup {
+        constructor(year, title, description) {
+          this.year = year
+          this.title = title
+          this.description = description
+        }
+      }
+
+      const viewport = document.querySelector('.mmac-timeline__viewport')
+      const dates = [1996, 2000, 2005, 2010, 2015, 2020, 2025, 2026]
+      const popups = dates.reduce((map, date) => {
+        map[date] = new Popup(date, 'Title', 'Description')
+        return map
+      }, {})
+
+      let pinnedId = null
+
+      viewport.addEventListener('wheel', function(e) {
+        e.preventDefault()
+        
+        const items = document.querySelectorAll('.mmac-timeline__item')
+        const direction = e.deltaY > 0 ? 1 : -1
+        
+        let currentIndex = 0
+        let closestDistance = Infinity
+        
+        items.forEach((item, index) => {
+          const distance = Math.abs(item.getBoundingClientRect().left - viewport.getBoundingClientRect().left)
+          if (distance < closestDistance) {
+            closestDistance = distance
+            currentIndex = index
+          }
+        })
+        
+        const nextIndex = Math.min(Math.max(currentIndex + direction, 0), items.length - 1)
+        items[nextIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
+      })
+
+      function showPopup(popup) {
+        const container = document.querySelector('.mmac-popup')
+        
+        container.innerHTML = `
+          <button class="mmac-popup__close" onclick="hidePopup()">✕</button>
+          <span class="mmac-popup__year">${popup.year}</span>
+          <h3>${popup.title}</h3>
+          <p>${popup.description}</p>
+        `
+        
+        container.style.display = 'block'
+      }
+
+      function setPopupCoords(item, popup) {
+        const boundsItem = item.querySelector('.mmac-timeline__year').getBoundingClientRect()
+        const container = document.querySelector('.mmac-popup')
+
+        container.style.left = boundsItem.left + ((boundsItem.width) / 2) + 'px'
+        container.style.top = boundsItem.bottom + 70 + 'px'
+      }
+
+      function hidePopup() {
+        pinnedId = null
+        const container = document.querySelector('.mmac-popup')
+        container.style.display = 'none'
+      }
+
+      function generateNodes(dates) {
+        const track = document.querySelector('.mmac-timeline__track')
+
+        dates.forEach(date => {
+          const item = document.createElement('li')
+
+          item.className = 'mmac-timeline__item'
+          item.innerHTML = `<span class="mmac-timeline__year">${date}</span>`
+
+          const dateBox = item.querySelector('.mmac-timeline__year')
+
+          // hover on a date
+          dateBox.addEventListener('mouseenter', function() {
+            if (!pinnedId) {
+              showPopup(popups[date])
+              setPopupCoords(item, popups[date])
+            }
+          })
+
+          // mouse leaves date
+          dateBox.addEventListener('mouseleave', function() {
+            if (!pinnedId) {
+              hidePopup()
+            }
+          })
+
+          // click on a date
+          dateBox.addEventListener('click', function() {
+            if (pinnedId === date) {
+              pinnedId = null
+              hidePopup()
+            } else {
+              pinnedId = date
+              showPopup(popups[date])
+              setPopupCoords(item, popups[date])
+            }
+          })
+          
+          track.appendChild(item)
+        });
+
+        track.lastChild.style.width = '0'
+      }
+
+      function clipLast() {
+        const track = document.querySelector('.mmac-timeline__track')
+        const lastItem = track.lastChild.querySelector('.mmac-timeline__year')
+
+        const rectTrack = track.getBoundingClientRect()
+        const rectItem = lastItem.getBoundingClientRect()
+
+        const padding = rectTrack.right - rectItem.right
+        track.style.setProperty('--line-end', padding + 'px')
+        track.lastChild.style.minWidth = '0'
+        
+      }
+
+      generateNodes(dates)
+      clipLast()
+    </script>
+
+  </body>
+</html>
