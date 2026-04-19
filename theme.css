@@ -1,21 +1,79 @@
+/* Timeline bar */
 .tl-timenav {
+  border-top: 2px solid #4d96c2;
+  background-color: #fed118;
+}
+
+/* Tick mark background */
+.tl-timeaxis-background {
   background-color: #4d96c2;
 }
 
-.tl-timeaxis-background {
-  background-color: #e8e8e8;
+/* Tick lines */
+/* .tl-timeaxis-tick:before {
+  background-color: ;
+} */
+
+/* Tick date text */
+/* .tl-timeaxis .tl-timeaxis-tick {
+  color: ;
+} */
+
+/* Slide background */
+.tl-slider-container-mask {
+  background-color: #000000;
 }
 
+/* Text area background: Keep off */
+/* .tl-text {
+  background-color: ;
+} */
+
+/* Text area headline */
+/* .tl-headline {
+  color: ;
+} */
+
+/* Text area body */
+/* .tl-text-content {
+  color: ;
+} */
+
+/* Date above headline */
+/* .tl-headline-date {
+  color: ;
+} */
+
+/* Marker flag background */
 .tl-timemarker .tl-timemarker-content-container {
   background-color: #ffffff;
   color: #333333;
 }
 
+/* Active marker flag */
 .tl-timemarker.tl-timemarker-active .tl-timemarker-content-container {
-  background-color: #fadb62;
+  background-color: #4d96c2;
   color: #ffffff;
 }
 
-.tl-slider-container-mask {
-  background-color: #000000;
-}
+/* Hover marker flag */
+/* .tl-timemarker:hover .tl-timemarker-content-container {
+  background-color: ;
+  color: ;
+} */
+
+/* Previous/next navigation arrows */
+/* .tl-timeline .tl-slidenav-next,
+.tl-timeline .tl-slidenav-previous {
+  color: ;
+} */
+
+/* Media credit text */
+/* .tl-timeline .tl-credit {
+  color: ;
+} */
+
+/* Media caption text */
+/* .tl-timeline .tl-caption {
+  color: ;
+} */
