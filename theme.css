@@ -1,0 +1,25 @@
+.tl-timenav {
+  background-color: #f5f5f5;
+}
+
+.tl-timeaxis-background {
+  background-color: #e8e8e8;
+}
+
+.tl-timemarker .tl-timemarker-content-container {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.tl-timemarker.tl-timemarker-active .tl-timemarker-content-container {
+  background-color: #d4a017;
+  color: #ffffff;
+}
+
+.tl-slider-container-mask {
+  background-color: #1a1a2e;
+}
+
+.tl-text {
+  background-color: #ffffff;
+}
