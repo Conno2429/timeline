@@ -1,5 +1,5 @@
 .tl-timenav {
-  background-color: #fed118;
+  background-color: #4d96c2;
 }
 
 .tl-timeaxis-background {
@@ -12,14 +12,14 @@
 }
 
 .tl-timemarker.tl-timemarker-active .tl-timemarker-content-container {
-  background-color: #d4a017;
+  background-color: #fadb62;
   color: #ffffff;
 }
 
 .tl-slider-container-mask {
-  background-color: #1a1a2e;
+  background-color: #000000;
 }
 
 .tl-text {
-  background-color: #fed118;
+  background-color: #ffffff;
 }
