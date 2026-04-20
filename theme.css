@@ -1,12 +1,12 @@
 /* Timeline bar */
 .tl-timenav {
-  border-top: 2px solid #4d96c2;
-  background-color: #fcedb0;
+  border-top: 2px solid #2a6b7c;
+  background-color: #2a1f0f;
 }
 
 /* Tick mark background */
 .tl-timeaxis-background {
-  background-color: #e8e8e8;
+  background-color: #1a1208;
 }
 
 /* Tick lines */
@@ -63,28 +63,28 @@
 
 /* Marker flag background */
 .tl-timemarker .tl-timemarker-content-container {
-  background-color: #ffffff
-  border-top: 2px solid #4d96c2;
+  background-color: #ffffff;
+  border-top: 2px solid #2a6b7c;
   color: #333333;
 }
 
 /* Active marker flag */
 .tl-timemarker.tl-timemarker-active .tl-timemarker-content-container {
-  background-color: #4d96c2;
-  border-top: 2px solid #4d96c2;
+  background-color: #2a6b7c;
+  border-top: 2px solid #2a6b7c;
   color: #ffffff;
 }
 
 /* Hover marker flag */
 .tl-timemarker:hover .tl-timemarker-content-container {
-  background-color: #fed118;
-  color: ;
+  background-color: #8b6914;
+  color: #ffffff;
 }
 
 /* Previous/next navigation arrows */
 .tl-timeline .tl-slidenav-next,
 .tl-timeline .tl-slidenav-previous {
-  color: #4d96c2;
+  color: #2a6b7c;
 }
 
 /* Media credit text */
