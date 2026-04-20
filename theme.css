@@ -39,6 +39,18 @@
   color: ;
 } */
 
+.tl-media-content-container {
+  background-color: transparent !important;
+  width: 480px !important;
+  flex-shrink: 0;
+}
+
+.tl-media-content {
+  background-color: transparent !important;
+  max-width: 480px;
+  max-height: 480px;
+}
+
 /* Text area container */
 .tl-text-content-container {
   max-width: 600px;
