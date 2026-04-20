@@ -1,7 +1,7 @@
 /* Timeline bar */
 .tl-timenav {
   border-top: 2px solid #4d96c2;
-  background-color: #fadb62;
+  background-color: #fcedb0;
 }
 
 /* Tick mark background */
@@ -39,6 +39,11 @@
   color: ;
 } */
 
+/* Text area container */
+.tl-text-content-container {
+  max-width: 600px;
+}
+
 /* Date above headline */
 /* .tl-headline-date {
   color: ;
@@ -46,27 +51,29 @@
 
 /* Marker flag background */
 .tl-timemarker .tl-timemarker-content-container {
-  background-color: #ffffff;
+  background-color: #ffffff
+  border-top: 2px solid #4d96c2;
   color: #333333;
 }
 
 /* Active marker flag */
 .tl-timemarker.tl-timemarker-active .tl-timemarker-content-container {
   background-color: #4d96c2;
+  border-top: 2px solid #4d96c2;
   color: #ffffff;
 }
 
 /* Hover marker flag */
-/* .tl-timemarker:hover .tl-timemarker-content-container {
-  background-color: ;
+.tl-timemarker:hover .tl-timemarker-content-container {
+  background-color: #fed118;
   color: ;
-} */
+}
 
 /* Previous/next navigation arrows */
-/* .tl-timeline .tl-slidenav-next,
+.tl-timeline .tl-slidenav-next,
 .tl-timeline .tl-slidenav-previous {
-  color: ;
-} */
+  color: #4d96c2;
+}
 
 /* Media credit text */
 /* .tl-timeline .tl-credit {
