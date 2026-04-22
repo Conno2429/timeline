@@ -1,7 +1,7 @@
 /* Timeline bar */
 .tl-timenav {
   border-top: 2px solid #fed118;
-  background-color: #989898;
+  background-color: #33302E;
 }
 
 /* Tick mark background */
@@ -65,7 +65,7 @@
 .tl-timemarker .tl-timemarker-content-container {
   background-color: #ffffff;
   border-top: 2px solid #2a6b7c;
-  color: #333333;
+  color: #fed118;
 }
 
 /* Active marker flag */
@@ -78,6 +78,7 @@
 /* Hover marker flag */
 .tl-timemarker:hover .tl-timemarker-content-container {
   background-color: #fed118;
+  border-top: 2px solid #2a6b7c;
   color: #ffffff;
 }
 
