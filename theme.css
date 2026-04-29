@@ -76,7 +76,7 @@
 /* Active marker flag */
 .tl-timemarker.tl-timemarker-active .tl-timemarker-content-container {
   background-color: #2a6b7c;
-  border-top: 2px solid #2a6b7c;
+  border-top: 2px solid #fed118;
   color: #ffffff;
 }
 
