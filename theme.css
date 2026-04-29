@@ -9,6 +9,11 @@
   background-color: #e8e8e8;
 }
 
+/* Era background */
+.tl-timeera-background {
+    background-color: #c79e00;
+}
+
 /* Tick lines */
 /* .tl-timeaxis-tick:before {
   background-color: ;
